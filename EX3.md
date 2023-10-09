@@ -74,6 +74,7 @@ SELECT ename FROM EMP WHERE sal > (SELECT sal FROM EMP WHERE empno = 7566);
 ```
 
 ### OUTPUT:
+![1](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/48c2fc29-e121-4fdf-8e72-3baf87737b92)
 
 ### Q2) List the ename,job,sal of the employee who get minimum salary in the company.
 
@@ -83,6 +84,7 @@ SELECT ename,job,sal FROM EMP WHERE sal = (SELECT MIN(sal) FROM EMP);
 ```
 
 ### OUTPUT:
+![2](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/acb230e0-0e2d-478c-911a-c2c44e0cbd00)
 
 ### Q3) List ename, job of the employees who work in deptno 10 and his/her job is any one of the job in the department ‘SALES’.
 
@@ -92,6 +94,8 @@ SELECT ename,job FROM EMP WHERE deptno = 10 AND job IN (SELECT job FROM EMP WHER
 ```
 
 ### OUTPUT:
+![3](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/8255ce9b-af53-4cbf-a50c-7e585a7eec3b)
+
 
 
 ### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 10.
@@ -103,6 +107,8 @@ SELECT * FROM empv5;
 ```
 
 ### OUTPUT:
+![4](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/f35bd71c-9a0a-4b99-9dcc-dec2bfb0ade6)
+
 
 ### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 30. Also display the contents of the view.
 
@@ -113,6 +119,7 @@ SELECT * FROM empv5;
 ```
 
 ### OUTPUT:
+![5](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/c706d2c9-8b74-4fa9-8761-f6f46b893f81)
 
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
@@ -123,6 +130,7 @@ create view emplov5 as select EMPNO,ENAME,SAL,JOB from EMP;
 ```
 
 ### OUTPUT:
+![6](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/1077c7af-ab6c-4eb8-8621-90e42bbebea2)
 
 ## Create a Customer1 Table
 ```sql
@@ -160,6 +168,8 @@ select s.name,c.cust_name,s.city from salesman1 s ,customer1 c where s.city=c.ci
 ```
 
 ### OUTPUT:
+![7](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/e5b19b3d-124e-4544-bd70-c7cf0a4881b4)
+
 
 ### Q8) Write a SQL query to find salespeople who received commissions of more than 13 percent from the company. Return Customer Name, customer city, Salesman, commission.
 
@@ -170,6 +180,8 @@ select s.name,c.cust_name,c.city,s.commission from salesman1 s inner join custom
 ```
 
 ### OUTPUT:
+![8](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/b43939c3-e427-4b48-8215-5e60e592fc08)
+
 
 ### Q9) Perform Natural join on both tables
 
@@ -179,6 +191,7 @@ select s.name,c.cust_name,c.city,s.commission from salesman1 s inner join custom
 ```
 
 ### OUTPUT:
+![9](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/dcdb3958-39f2-4a4e-b55f-a4031e4ecf74)
 
 ### Q10) Perform Left and right join on both tables
 
@@ -191,9 +204,11 @@ select s.name,c.cust_name,c.city,s.commission from salesman1 s right join custom
 
 ### OUTPUT:
 
-### Left join:
 
+### Left join:
+![10](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/9075b04b-b1b1-4ae6-9486-f2da2af5238a)
 ### Right join:
+![11](https://github.com/Mothesh-M127/EX-3-SubQueries-Views-and-Joins/assets/94170892/103fb10e-9c65-4f97-bb05-f1e0af85e828)
 
 ## Result:
 Thus, a database is created and implementation of views,subqueries and joins is executed successfully.
