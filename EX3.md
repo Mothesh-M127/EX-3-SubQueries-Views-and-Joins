@@ -69,21 +69,27 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 
 
 ### QUERY:
-
+```sql
+SELECT ename FROM EMP WHERE sal > (SELECT sal FROM EMP WHERE empno = 7566);
+```
 
 ### OUTPUT:
 
 ### Q2) List the ename,job,sal of the employee who get minimum salary in the company.
 
 ### QUERY:
-
+```sql
+SELECT ename,job,sal FROM EMP WHERE sal = (SELECT MIN(sal) FROM EMP);
+```
 
 ### OUTPUT:
 
 ### Q3) List ename, job of the employees who work in deptno 10 and his/her job is any one of the job in the department ‘SALES’.
 
 ### QUERY:
-
+```sql
+SELECT ename,job FROM EMP WHERE deptno = 10 AND job IN (SELECT job FROM EMP WHERE job = 'sales');
+```
 
 ### OUTPUT:
 
@@ -91,21 +97,30 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 10.
 
 ### QUERY:
-
+```sql
+create view empv5 as select EMPNO,ENAME,JOB from EMP where DEPTNO=10;
+SELECT * FROM empv5;
+```
 
 ### OUTPUT:
 
 ### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 30. Also display the contents of the view.
 
 ### QUERY:
-
+```sql
+create view empv5 as select EMPNO,ENAME,JOB from EMP where DEPTNO=10;
+SELECT * FROM empv5;
+```
 
 ### OUTPUT:
 
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
 ### QUERY:
-
+```sql
+update EMP set SAL=SAL*1.1 WHERE JOB='clerk';
+create view emplov5 as select EMPNO,ENAME,SAL,JOB from EMP;
+```
 
 ### OUTPUT:
 
@@ -140,7 +155,9 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 ### Q7) Write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
 
 ### QUERY:
-
+```sql
+select s.name,c.cust_name,s.city from salesman1 s ,customer1 c where s.city=c.city;
+```
 
 ### OUTPUT:
 
@@ -148,20 +165,35 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 
 
 ### QUERY:
-
+```sql
+select s.name,c.cust_name,c.city,s.commission from salesman1 s inner join customer1 c on s.city=c.city where s.commission>0.13;
+```
 
 ### OUTPUT:
 
 ### Q9) Perform Natural join on both tables
 
 ### QUERY:
-
+```sql
+ select * from salesman1 s natural join customer1 c;
+```
 
 ### OUTPUT:
 
 ### Q10) Perform Left and right join on both tables
 
 ### QUERY:
+```sql
+select s.name,c.cust_name,c.city,s.commission from salesman1 s left join customer1 c on s.salesman_id=c.salesman_id;
 
+select s.name,c.cust_name,c.city,s.commission from salesman1 s right join customer1 c on s.salesman_id=c.salesman_id;
+```
 
 ### OUTPUT:
+
+### Left join:
+
+### Right join:
+
+## Result:
+Thus, a database is created and implementation of views,subqueries and joins is executed successfully.
